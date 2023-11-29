@@ -1,10 +1,30 @@
 import React from 'react'
-import { useState } from 'react'  // Hook
+import { useState, useEffect } from 'react'  // Hook
 
 import { close, logo, menu } from '../assets'
 import { navLinks } from '../constants'
 function Navbar() {
   const [toggle, setToggle] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        const offset = window.scrollY;
+        if (offset > 0) {
+          navbar.classList.add('navbar-fixed');
+        } else {
+          navbar.classList.remove('navbar-fixed');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className='w-full flex py-6 justify-between items-center navbar'>
       <img src= {logo} alt='hoobank' className='w-[124px] h-[32px]' />

@@ -139,10 +139,10 @@
   filter: blur(750px);
 }
 
-.navbar {
+.navbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 999; /* Adjust z-index as needed */
 }
