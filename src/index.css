@@ -138,3 +138,8 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+
+.logo:hover {
+  filter: brightness(150%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* Adjust the glow effect as needed */
+  transition: filter 0.3s ease; /* Adding transition for a smoother effect */
+}
